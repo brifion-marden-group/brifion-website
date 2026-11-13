@@ -52,6 +52,7 @@ export function PricingTabs() {
           className="pricing-panel"
         >
           <p className="pricing-intro">{group.intro}</p>
+          <p className="swipe-hint" aria-hidden="true">{pricing.swipeHint} →</p>
           <ol className="package-list">
             {group.items.map((item) => (
               <li key={item.name}>

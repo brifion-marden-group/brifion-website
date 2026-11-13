@@ -76,6 +76,7 @@ export function Projects() {
       <MainProject />
 
       <h3 className="team-projects-title">{projects.teamTitle}</h3>
+      <p className="swipe-hint" aria-hidden="true">{projects.swipeHint} →</p>
       <div className="team-project-grid">
         {projects.team.map((project) => (
           <TeamProject key={project.id} project={project} />

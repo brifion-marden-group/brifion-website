@@ -32,7 +32,7 @@ Hentikan server preview sebelum membuat build baru. Font Manrope dan Lora diambi
 | `src/components/two-lines.tsx` | Judul dua baris |
 | `src/app/page.tsx` | Urutan section dan JSON-LD Organization |
 | `src/app/layout.tsx`, `robots.ts`, `sitemap.ts` | Metadata, font, robots, sitemap |
-| `src/app/globals.css` | Token warna, tipografi, dan gaya per section |
+| `src/app/globals.css` | Mobile first: gaya dasar untuk HP (< 768 px), lalu `@media (min-width: 768px)` untuk tablet dan desktop, dan `768–1100px` untuk penyesuaian tablet. Di HP, proyek developer dan kartu harga tampil sebagai carousel geser |
 | `public/` | Logo, foto, dan screenshot proyek (sumber di `docs/aset-visual.md`) |
 
 Untuk mengubah teks, cukup edit `site.ts`. Untuk menyembunyikan harga, hapus baris `package-price` di `pricing-tabs.tsx` atau kosongkan grup di `pricing.groups`.

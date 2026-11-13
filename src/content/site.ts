@@ -51,6 +51,7 @@ export const projects = {
   intro:
     "Proyek utama Brifion saat ini, ditambah pengalaman tim developer kami: Imam Bahri Alwi dan Abdee Alamsyah Noer Siyam.",
   teamTitle: "Pengalaman tim developer",
+  swipeHint: "Geser untuk melihat proyek lain",
   // Proyek Brifion sendiri, dari Company Profile hlm. 8. Nama klien tidak dipublikasikan.
   main: {
     label: "Proyek Brifion · Maluku · Dalam pengembangan",
@@ -188,10 +189,11 @@ type PricingItem = {
 
 type PricingGroup = { id: string; tab: string; intro: string; items: readonly PricingItem[] };
 
-export const pricing: { label: string; title: string; note: string; groups: readonly PricingGroup[] } = {
+export const pricing: { label: string; title: string; note: string; swipeHint: string; groups: readonly PricingGroup[] } = {
   label: "Harga",
   title: "Harga awal yang jelas sejak percakapan pertama.",
   note: "Harga belum termasuk pajak. Ruang lingkup dan jadwal final disepakati setelah kami memahami kebutuhan Anda.",
+  swipeHint: "Geser untuk melihat paket lain",
   groups: [
     {
       // Paket Software Distributor, ClickUp #14 (4 Nov 2026). Status: usulan bersyarat.
