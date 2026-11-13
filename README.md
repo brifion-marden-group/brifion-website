@@ -55,4 +55,9 @@ Seluruh teks, termasuk kedua tab harga, dirender sebagai HTML statis sehingga bi
 - [Referensi desain](docs/referensi-desain.md)
 - [Verifikasi dan daftar persetujuan](docs/verifikasi.md)
 
-Git lokal sudah diinisialisasi. Belum ada commit, push, deployment, atau perubahan DNS.
+## Repo dan deployment
+
+- Repo: [brifion-marden-group/brifion-website](https://github.com/brifion-marden-group/brifion-website) (private).
+- Preview produksi: https://brifion-website.vercel.app (Vercel, scope `imam-bahri-alwis-projects`, paket Hobby).
+- Deploy ulang dari folder ini: `vercel deploy --prod`. Repo belum terhubung ke Vercel untuk deploy otomatis; paket Hobby tidak bisa memakai repo private milik organisasi.
+- Domain `brifion.com` belum diarahkan. Untuk website resmi komersial, pindahkan ke paket Vercel Pro sebelum memasang domain.
