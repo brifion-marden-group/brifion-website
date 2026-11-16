@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company, distributorPackages } from "@/content/site";
@@ -31,7 +32,7 @@ export default function PricingPage() {
             <h1 id="harga-title" className={s.title}>Harga awal yang jelas sejak percakapan pertama</h1>
             <p className={s.intro}>Pilih paket dari masalah yang paling ingin Anda selesaikan. Setiap paket mencakup paket sebelumnya, dan cakupannya bisa disesuaikan setelah konsultasi.</p>
           </div>
-          <ol className={s.grid3}>
+          <ol className={`${s.grid3} ${s.carousel}`}>
             {items.map((plan) => (
               <li key={plan.id} id={plan.id} className={`${s.card} ${styles.plan}`}>
                 <div className={s.cardHead}><h2 className={s.cardTitle}>{plan.name}</h2></div>
@@ -56,11 +57,13 @@ export default function PricingPage() {
               </li>
             ))}
           </ol>
+          <p className={s.swipeHint} aria-hidden="true">Geser untuk melihat paket lain</p>
           <p className={styles.costNote}>Harga belum termasuk pajak, domain, dan hosting. Kebutuhan serta biaya tambahan disepakati sebelum pengerjaan.</p>
         </div>
       </section>
 
     </main>
     <SiteFooter />
+    <MobileCtaBar />
   </>;
 }

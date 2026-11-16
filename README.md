@@ -25,7 +25,7 @@ pnpm start --port 3200      # preview produksi
 
 Hentikan server preview sebelum build ulang. Font Manrope diambil `next/font/google` saat build, jadi build pertama perlu internet.
 
-`/demo` membaca alamat prototype dari `BRIFION_DEMO_URL` (environment lokal, diabaikan Git) saat build. Preview lokal memakai `http://127.0.0.1:3214/login`; prototype dijalankan dengan `NEXT_PUBLIC_AUTH_MOCK=true` dan `NEXT_PUBLIC_API_MOCK=true`. Tanpa alamat valid, halaman menampilkan "akses sedang disiapkan". Alamat publik harus HTTPS.
+`/demo` membaca alamat prototype dari `BRIFION_DEMO_URL` saat build. Produksi: `https://demo.brifion.com` (diisi di environment Vercel). Preview lokal memakai `http://127.0.0.1:3214/login`. Tanpa alamat valid, halaman menampilkan "akses sedang disiapkan". Alamat publik harus HTTPS.
 
 Formulir konsultasi tidak menyimpan data: isian disusun menjadi draf pesan `wa.me`, lalu pengunjung menekan Kirim di WhatsApp.
 
@@ -62,3 +62,24 @@ Formulir konsultasi tidak menyimpan data: isian disusun menjadi draf pesan `wa.m
 - Vercel (akun `brifionmardengr`, project `brifion-website`) terhubung ke repo ini: setiap push ke `main` memicu deploy produksi. Paket Hobby menolak deploy dari repo private milik organisasi GitHub, jadi repo perlu public atau akun Vercel perlu paket Pro.
 - Domain: `brifion.com` di-redirect ke `www.brifion.com` (domain utama). DNS dikelola di Hostinger.
 - Ketentuan Vercel membatasi paket Hobby untuk penggunaan non-komersial; untuk website resmi perusahaan, pertimbangkan paket Pro.
+
+## SEO, Search Console, dan domain (status 16 November 2026)
+
+**Sudah**
+
+- Domain utama `https://www.brifion.com`; canonical, `robots.txt`, dan sitemap (4 halaman: `/`, `/harga`, `/demo`, `/privasi`) memakai www. Metadata per halaman lewat `src/lib/seo.ts`, gambar pratinjau dari `src/app/opengraph-image.tsx`, structured data Organization + WebSite di beranda.
+- Google Search Console: properti diverifikasi lewat DNS, sitemap `https://www.brifion.com/sitemap.xml` sudah dikirim dan diproses (4 halaman ditemukan), dan permintaan pengindeksan sudah diajukan.
+- Deploy Vercel untuk commit terakhir di kedua repo sudah berhasil; `demo.brifion.com` live dan tautan dari `/demo` website berfungsi.
+- Alert Dependabot `minimatch` sudah ditangani (override `minimatch` 11.0.1 di `package.json`).
+- Prototype: typecheck, lint, 418 test, dan build lulus.
+- DNS di Hostinger: `brifion.com` (A ke Vercel, redirect ke www), `www` (CNAME ke Vercel), `demo` (subdomain demo ke project Vercel prototype).
+- Demo publik `demo.brifion.com`: repo [brifion-marden-group/prototype](https://github.com/brifion-marden-group/prototype), Next.js tanpa backend dengan `NEXT_PUBLIC_DEMO_MODE=true`, `NEXT_PUBLIC_AUTH_MOCK=true`, `NEXT_PUBLIC_API_MOCK=true`; dipasang `noindex`. Website mengarah ke sana lewat `BRIFION_DEMO_URL`.
+
+**Dipantau**
+
+- Hasil pengindeksan Google (beberapa hari sampai beberapa minggu); cek Search Console > Pages.
+
+**Belum**
+
+- Pengaturan AI WhatsApp dan pengalihan percakapan ke tim.
+- Paket Vercel Pro untuk penggunaan komersial.

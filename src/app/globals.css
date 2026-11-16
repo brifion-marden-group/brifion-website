@@ -47,7 +47,7 @@
 
 /* ---------- Elemen bersama ---------- */
 .eyebrow { font-size: 11px; letter-spacing: .12em; font-weight: 600; line-height: 1.6; }
-.button-gold, .button-navy { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 50px; padding: 15px 20px; font-size: 13px; font-weight: 600; border-radius: 3px; text-align: left; }
+.button-gold, .button-navy { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 50px; padding: 15px 20px; font-size: 14px; font-weight: 600; border-radius: 3px; text-align: left; }
 .button-gold { background: #d6bb8e; color: #0f1a2b; }
 .button-gold:hover { background: #e7cc9f; }
 .button-navy { background: #0f1a2b; color: #fff; }
@@ -57,7 +57,7 @@
 .text-link.light { color: #f7f5f1; }
 .text-link.light:hover { color: #d6bb8e; }
 .small-note { font-size: 12px; line-height: 1.7; color: #59616a; margin-top: 18px; }
-@media (max-width: 767px) { .button-gold, .button-navy { font-size: 12px; } }
+@media (min-width: 768px) { .button-gold, .button-navy { font-size: 13px; } }
 
 /* ---------- Hero ---------- */
 .distribution-hero { background: #0f1a2b; color: #f7f5f1; overflow: hidden; }
@@ -67,7 +67,8 @@
 .hero-redesign h1 { font-size: clamp(38px, 9.6vw, 60px); line-height: 1.06; margin-top: 25px; letter-spacing: -.055em; }
 .hero-redesign h1 > span { color: #d6bb8e; }
 .hero-redesign-description { color: #d1d7df; font-size: 15px; line-height: 1.8; max-width: 410px; margin-top: 26px; }
-.distribution-actions { display: flex; align-items: flex-start; flex-direction: column; gap: 6px; margin-top: 28px; }
+.distribution-actions { display: flex; align-items: stretch; flex-direction: column; gap: 6px; margin-top: 28px; text-align: center; }
+.distribution-actions .button-gold { justify-content: center; }
 .hero-product-preview { min-width: 0; padding-block: 8px; }
 .hero-redesign-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; margin-top: 18px; padding-block: 20px; border-top: 1px solid #354154; font-size: 11px; color: #ccd3dc; }
 .hero-redesign-bottom a { text-decoration: underline; text-underline-offset: 4px; }
@@ -75,7 +76,8 @@
   .hero-redesign-layout { grid-template-columns: .9fr 1.2fr; align-items: center; gap: 45px; padding-top: 54px; padding-bottom: 30px; }
   .hero-redesign-copy { padding-block: 10px; }
   .hero-redesign h1 { font-size: clamp(44px, 4.3vw, 65px); }
-  .distribution-actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+  .distribution-actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px 22px; text-align: left; }
+  .distribution-actions .button-gold { justify-content: space-between; }
   .hero-product-preview { padding: 0; }
   .hero-redesign-bottom { margin-top: 20px; }
 }
@@ -129,11 +131,12 @@
 .form-wide textarea { flex: 1; min-height: 140px; resize: none; }
 .consultation-submit { width: 100%; min-height: 50px; margin-top: 24px; justify-content: center; gap: 10px; border-radius: 8px; font-size: 14px; }
 .consultation-submit:disabled { opacity: .6; cursor: wait; }
-.consultation-form .small-note { margin-top: 14px; font-size: 11px; text-align: center; }
+.consultation-form .small-note { margin-top: 14px; font-size: 12px; text-align: center; }
 .consultation-form .small-note a { text-decoration: underline; text-underline-offset: 3px; }
 @media (min-width: 768px) {
   .form-fields { grid-template-columns: 1fr 1fr; }
   .form-wide { grid-column: 1 / -1; }
+  .consultation-form .small-note { font-size: 11px; }
   .consultation-form-head { padding: 24px 32px; }
   .consultation-form-body { padding: 28px 32px 32px; }
 }

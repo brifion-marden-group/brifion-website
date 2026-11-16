@@ -1,5 +1,7 @@
 .footer { background: #fff; border-top: 1px solid #e3e1db; color: #0f1a2b; padding-block: 48px 28px; font-size: .9rem; line-height: 1.6; }
-.grid { display: grid; gap: 32px; }
+/* HP: identitas selebar penuh, dua kolom tautan berdampingan. Mulai 768px: tiga kolom seperti semula. */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+.grid > div:first-child { grid-column: 1 / -1; }
 .grid p { color: #56606c; margin: 12px 0 0; max-width: 32ch; }
 .logo { width: 150px; height: auto; }
 .grid nav { display: grid; gap: 8px; align-content: start; }
@@ -9,4 +11,10 @@
 .bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 36px; padding-top: 20px; border-top: 1px solid #d8dde3; color: #56606c; font-size: .8rem; }
 .bottom p { margin: 0; }
 .bottom a { color: inherit; }
-@media (min-width: 768px) { .grid { grid-template-columns: 2fr 1fr 1fr; } }
+/* Ruang untuk tombol WhatsApp di pojok kanan bawah layar HP (MobileCtaBar). */
+.footer { padding-bottom: 88px; }
+@media (min-width: 768px) {
+  .footer { padding-bottom: 28px; }
+  .grid { grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
+  .grid > div:first-child { grid-column: auto; }
+}

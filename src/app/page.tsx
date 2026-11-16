@@ -1,4 +1,5 @@
 import { DistributorHero, PackagesSection, BusinessTypes, CustomDevelopment, WorkProcess, Consultation } from "@/components/distributor-home";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import type { Metadata } from "next";
@@ -38,5 +39,6 @@ export default function Home() {
       <DistributorHero /><PackagesSection /><BusinessTypes /><CustomDevelopment /><WorkProcess /><Consultation />
     </main>
     <SiteFooter />
+    <MobileCtaBar />
   </>;
 }

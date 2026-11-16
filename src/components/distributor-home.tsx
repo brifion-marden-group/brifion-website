@@ -83,7 +83,7 @@ export function PackagesSection() {
   return <section id="paket" className={s.section} aria-labelledby="paket-title">
     <div className="page-width">
       <SectionHead id="paket-title" eyebrow="01 / Paket aplikasi" title="Aplikasi untuk operasional distribusi" intro="Pilih dari masalah yang paling terasa. Setiap paket mencakup paket sebelumnya." />
-      <ol className={s.grid3}>
+      <ol className={`${s.grid3} ${s.carousel}`}>
         {distributorPackages.items.map((plan) => (
           <li key={plan.id} className={s.card}>
             <div className={s.cardHead}><h3 className={s.cardTitle}>{plan.name}</h3><span className={s.cardTag}>(mulai {plan.price})</span></div>
@@ -102,6 +102,7 @@ export function PackagesSection() {
           </li>
         ))}
       </ol>
+      <p className={s.swipeHint} aria-hidden="true">Geser untuk melihat paket lain</p>
       <div className={s.capsWrap}>
         <p className={s.capsLabel}>Bagian yang bisa dihubungkan dalam satu sistem</p>
         <ul className={s.caps}>
@@ -120,7 +121,7 @@ export function BusinessTypes() {
   return <section id="untuk-siapa" className={`${s.section} ${s.alt}`} aria-labelledby="usaha-title">
     <div className="page-width">
       <SectionHead id="usaha-title" eyebrow="02 / Jenis usaha" title="Cocok untuk usaha yang menggerakkan barang" intro="Distributor, grosir, dan supplier memiliki alur yang berbeda. Sistem dibangun mengikuti proses yang Anda jalankan." />
-      <ul className={s.grid3}>
+      <ul className={`${s.grid3} ${s.carousel}`}>
         {businesses.map((b) => (
           <li key={b.title} className={`${s.card} ${s.mediaCard}`}>
             <figure className={s.media}><Image quality={90} src={b.src} alt={b.alt} width={2244} height={701} sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" /></figure>
@@ -140,6 +141,7 @@ export function BusinessTypes() {
           </div>
         </li>
       </ul>
+      <p className={s.swipeHint} aria-hidden="true">Geser untuk melihat jenis usaha lain</p>
     </div>
   </section>;
 }
@@ -163,7 +165,7 @@ export function WorkProcess() {
   return <section id="cara-kerja" className={s.section} aria-labelledby="process-title">
     <div className="page-width">
       <SectionHead id="process-title" eyebrow="03 / Cara kerja" title="Anda ikut memeriksa di setiap tahap" intro={process.note} />
-      <ol className={`${s.grid3} ${s.grid4}`}>
+      <ol className={`${s.grid3} ${s.grid4} ${s.carousel}`}>
         {process.steps.map((step, i) => (
           <li key={step.title} className={`${s.card} ${s.stepCard}`}>
             <div className={s.cardBody}>
@@ -174,6 +176,7 @@ export function WorkProcess() {
           </li>
         ))}
       </ol>
+      <p className={s.swipeHint} aria-hidden="true">Geser untuk melihat tahap berikutnya</p>
       <p className={s.note}>Ruang lingkup, biaya, dan jadwal disepakati setelah kebutuhan dibahas bersama. <Link href="/harga" className={s.arrowLink}>Lihat harga paket <span aria-hidden="true">&rarr;</span></Link></p>
     </div>
   </section>;

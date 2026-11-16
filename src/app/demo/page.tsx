@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import s from "@/components/ui/sections.module.css";
@@ -70,5 +71,6 @@ export default function DemoPage() {
       </section>
     </main>
     <SiteFooter />
+    <MobileCtaBar />
   </>;
 }

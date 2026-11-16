@@ -1,0 +1,17 @@
+/* Hanya untuk HP: tombol WhatsApp ringkas di pojok kanan bawah. Tidak dirender mulai 768px. */
+.bar {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 40;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.bar[data-hidden="true"] { transform: translateY(140%); opacity: 0; pointer-events: none; }
+.button {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 52px; padding: 0 20px 0 16px; border-radius: 999px;
+  background: #0f1a2b; color: #fff; font-size: 15px; font-weight: 600;
+  box-shadow: 0 12px 28px -10px rgba(15, 26, 43, .55);
+}
+.button:active { background: #2c405b; }
+.icon { width: 22px; height: 22px; color: #25d366; }
+
+@media (prefers-reduced-motion: reduce) { .bar { transition: none; } }
+@media (min-width: 768px) { .bar { display: none; } }

@@ -1,17 +1,27 @@
 /* Pola section & kartu bersama (homepage dan /harga).
    Judul rata tengah bernomor, kartu putih membulat, centang hijau. */
 
-.section { padding-block: 72px; background: #fff; }
+.section { padding-block: 56px; background: #fff; }
 .alt { background: #f4f2ed; }
 
 /* ---------- Judul section ---------- */
-.head { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+.head { max-width: 720px; margin: 0 auto 32px; text-align: center; }
 .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #8a6a3c; text-transform: uppercase; }
 .head .title { margin-top: 12px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 600; line-height: 1.18; letter-spacing: -.035em; color: #0f1a2b; text-wrap: balance; }
 .intro { margin-top: 14px; font-size: 16px; line-height: 1.8; color: #59616a; text-wrap: pretty; }
 
 /* ---------- Grid & kartu ---------- */
 .grid3 { display: grid; gap: 20px; }
+
+/* Carousel geser di HP (kartu paket, jenis usaha): satu kartu penuh + intipan kartu berikutnya.
+   Mulai 768px kembali menjadi grid biasa. */
+.carousel {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  margin-inline: -20px; padding: 4px 20px 8px; scroll-padding-inline: 20px; scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+.carousel > li { flex: 0 0 84%; scroll-snap-align: start; }
+.swipeHint { margin-top: 10px; text-align: center; font-size: 13px; color: #59616a; }
 .card { display: flex; flex-direction: column; min-width: 0; background: #fff; border: 1px solid #e3e1db; border-radius: 16px; }
 .alt .card { border-color: #e6e3dc; }
 .cardHead { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; padding: 22px 24px; border-bottom: 1px solid #ecebe6; }
@@ -44,17 +54,19 @@
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
 
 /* ---------- Baris kemampuan ---------- */
-.capsWrap { margin-top: 48px; padding-top: 36px; border-top: 1px solid #e3e1db; }
+.capsWrap { margin-top: 40px; padding-top: 28px; border-top: 1px solid #e3e1db; }
 .capsLabel { text-align: center; font-size: 14px; font-weight: 600; color: #2b2f36; }
-.caps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 8px; }
-.caps li { display: grid; justify-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #59616a; text-align: center; }
-.capIcon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 12px; border: 1px solid #e3e1db; background: #fff; color: #0f1a2b; }
+.caps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px 4px; }
+.caps li { display: grid; justify-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: #59616a; text-align: center; }
+.capIcon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; border: 1px solid #e3e1db; background: #fff; color: #0f1a2b; }
 .capIcon svg { width: 22px; height: 22px; }
 
 /* ---------- Kartu langkah ---------- */
 .stepNo { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: #f1e7d6; color: #6b5735; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
-.stepCard .cardBody { padding-top: 24px; }
-.stepCard .cardTitle { margin-bottom: 10px; }
+/* HP: nomor di samping judul agar kartu langkah ringkas. */
+.stepCard .cardBody { display: grid; grid-template-columns: 36px 1fr; column-gap: 14px; align-items: start; padding: 18px 20px; }
+.stepCard .stepNo { grid-row: span 2; margin-bottom: 0; }
+.stepCard .cardTitle { margin-bottom: 4px; font-size: 18px; }
 
 /* Kartu ajakan (pengisi grid) */
 .ctaCard { background: #0f1a2b; border-color: #0f1a2b; color: #f7f5f1; overflow: hidden; }
@@ -68,12 +80,21 @@
 .note { margin-top: 24px; text-align: center; font-size: 13px; line-height: 1.7; color: #59616a; }
 
 @media (min-width: 640px) {
-  .caps { grid-template-columns: repeat(5, 1fr); }
+  .caps { gap: 20px 8px; }
+  .caps li { gap: 10px; font-size: 13px; }
+  .capIcon { width: 52px; height: 52px; }
 }
 @media (min-width: 768px) {
   .section { padding-block: 96px; }
   .head { margin-bottom: 48px; }
   .grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .carousel { display: grid; gap: 20px; overflow: visible; margin-inline: 0; padding: 0; }
+  .carousel > li { flex: none; }
+  .swipeHint { display: none; }
+  .capsWrap { margin-top: 48px; padding-top: 36px; }
+  .stepCard .cardBody { display: flex; padding: 24px 24px 24px; }
+  .stepCard .stepNo { margin-bottom: 16px; }
+  .stepCard .cardTitle { margin-bottom: 10px; font-size: 21px; }
 }
 @media (min-width: 1024px) {
   .section { padding-block: 112px; }
