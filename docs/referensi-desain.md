@@ -1,5 +1,16 @@
 # Referensi desain
 
+## Redesign distributor/supplier, 15 November 2026
+
+Arah brand: navy, krem, perunggu; headline besar; foto konteks dan screenshot produk. ENERGY 2 / RHYTHM 3 / MOTION 1. Ritme dari hero produk, demo, baris kebutuhan, foto + konteks, profil navy, tahapan kerja, formulir. Tanpa glow/animasi masuk.
+
+- [ESIACC](https://esiacc.com/): HTML Cocok untuk Usaha Anda dan Demo Aplikasi. Diterapkan sebagai konteks usaha dan akses demo, dipersempit ke distributor/supplier; tidak menyalin teks/aset.
+- [SimpliDOTS](https://www.simplidots.com/): HTML homepage. Positioning distributor dan kebutuhan operasional, tanpa angka hasil/testimoni.
+- [Aras Pro](https://araspro.id/): HTML homepage/formulir. Pertanyaan perusahaan/PIC dan kebutuhan; draf WhatsApp tanpa database mengikuti koreksi pengguna.
+- [Choco](https://choco.com/us/): HTML homepage/permintaan demo. Konsistensi sasaran dan CTA.
+
+Bukan klaim pemeriksaan visual desktop/mobile lengkap atas referensi. Screenshot desktop/mobile redesign yang diperiksa adalah Brifion lokal. Referensi bukan sumber klaim fitur Brifion. Catatan berikut merupakan arah versi sebelumnya.
+
 Diperbarui 13 November 2026. Referensi dipakai untuk penyajian visual, bukan sumber klaim tentang Brifion.
 
 ## Homepage yang ditinjau (desktop 1440 px dan mobile 390 px)

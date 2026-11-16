@@ -1,5 +1,13 @@
 # Sumber konten publik
 
+## Pembaruan arah, 15 November 2026
+
+Instruksi terbaru: fokus aplikasi custom distributor/supplier; gunakan prototype supermarket yang sudah ada sebagai demo, tanpa membangun demo distributor baru. Formulir hanya menyimpan isian sementara di browser untuk draf WhatsApp. Domain/subdomain ditunda.
+
+Prototype diverifikasi dari `Desktop/prototype`: DEMO_SCOPE, DEMO_SCRIPT, SessionGate, FormLogin, klien-mock. Aplikasi dijalankan dan dipotret dengan akun fixture. Panduan akses mengikuti kode terkini yang memakai login. Sumber prototype tidak diubah.
+
+Homepage mengutamakan demo, kebutuhan operasional, konteks distributor/supplier, profil, empat tahap kerja, konsultasi. Contoh masalah bukan jaminan fitur produk. Layanan mengikuti Company Profile. Harga draf tidak dirender atau dimasukkan ke JSON-LD. Copy baru ada pada distributor-home.tsx dan consultation-form.tsx; materi berikut merupakan riwayat versi sebelumnya.
+
 Diperbarui 13 November 2026. Semua copy ada di `src/content/site.ts`.
 
 ## Dokumen sumber

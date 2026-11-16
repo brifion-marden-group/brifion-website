@@ -1,0 +1,24 @@
+/* Halaman /demo (versi sederhana). Pola judul & kartu dari components/ui/sections.module.css. */
+.actions { display: grid; gap: 10px; max-width: 320px; margin: 28px auto 0; }
+.notice { padding: 12px 16px; border-radius: 8px; background: #f4f2ed; font-size: 14px; color: #59616a; }
+
+/* Screenshot: dipotong 2:1 agar hanya bagian aplikasi yang berisi data yang tampil. */
+.frame { max-width: 1000px; margin-inline: auto; overflow: hidden; border: 1px solid #e3e1db; border-radius: 16px; background: #fff; box-shadow: 0 30px 60px -40px rgba(15, 26, 43, .5); }
+.bar { display: flex; align-items: center; gap: 6px; padding: 11px 16px; border-bottom: 1px solid #ecebe6; background: #faf9f6; }
+.bar i { width: 9px; height: 9px; border-radius: 50%; background: #d6d4cd; }
+.bar b { margin-left: 10px; font-size: 12px; font-weight: 500; color: #59616a; }
+.shot { aspect-ratio: 2 / 1; overflow: hidden; }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+
+/* Langkah: nomor di samping judul, kartu ringkas. */
+ol.steps { max-width: 1000px; margin: 32px auto 0; gap: 16px; }
+.steps .step { flex-direction: row; align-items: flex-start; gap: 16px; padding: 22px; }
+.steps .step > span { flex-shrink: 0; margin-bottom: 0; }
+.steps .step .stepTitle { margin-bottom: 6px; font-size: 18px; }
+
+@media (min-width: 640px) {
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: none; }
+}
+@media (min-width: 768px) {
+  ol.steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

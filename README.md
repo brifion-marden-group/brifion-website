@@ -1,52 +1,53 @@
 # Website PT Brifion Marden Group
 
-Website profil perusahaan satu halaman untuk `brifion.com`: profil, proyek, layanan, harga, cara kerja, dan kontak. Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, dan ESLint. Package manager pnpm 10; Node.js 20.9 atau lebih baru.
+Website `brifion.com`: aplikasi custom untuk distributor dan supplier. Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, ESLint. Package manager pnpm 10; Node.js 20.9 atau lebih baru.
+
+## Halaman
+
+| Rute | Isi |
+| --- | --- |
+| `/` | Hero dengan preview prototype, 01 Paket aplikasi, 02 Jenis usaha, Tentang Brifion, 03 Cara kerja, 04 Konsultasi |
+| `/harga` | Tiga kartu paket distributor (Stok Tertib, Order ke Stok, Distribusi Terkendali) |
+| `/demo` | Screenshot dan panduan singkat prototype supermarket |
+| `/privasi` | Penggunaan isian formulir konsultasi |
+
+Harga paket berasal dari ClickUp [Miles #14] dan masih berstatus usulan bersyarat; perlu persetujuan sebelum deploy.
 
 ## Menjalankan
 
 ```powershell
 pnpm install --frozen-lockfile
 pnpm dev                    # http://localhost:3000
-```
-
-## Pemeriksaan dan preview produksi
-
-```powershell
 pnpm lint
 pnpm build
-pnpm start --port 3200      # http://localhost:3200
+pnpm start --port 3200      # preview produksi
 ```
 
-Hentikan server preview sebelum membuat build baru. Font Manrope dan Lora diambil `next/font/google` saat build, jadi build pertama perlu internet. Website tidak memakai environment variable atau database.
+Hentikan server preview sebelum build ulang. Font Manrope diambil `next/font/google` saat build, jadi build pertama perlu internet.
+
+`/demo` membaca alamat prototype dari `BRIFION_DEMO_URL` (environment lokal, diabaikan Git) saat build. Preview lokal memakai `http://127.0.0.1:3214/login`; prototype dijalankan dengan `NEXT_PUBLIC_AUTH_MOCK=true` dan `NEXT_PUBLIC_API_MOCK=true`. Tanpa alamat valid, halaman menampilkan "akses sedang disiapkan". Alamat publik harus HTTPS.
+
+Formulir konsultasi tidak menyimpan data: isian disusun menjadi draf pesan `wa.me`, lalu pengunjung menekan Kirim di WhatsApp.
 
 ## Struktur
 
 | Lokasi | Isi |
 | --- | --- |
-| `src/content/site.ts` | Semua copy publik per section: perusahaan, navigasi, hero, proyek, tentang, layanan, harga, cara kerja, kontak, sosial media |
-| `src/components/sections.tsx` | Hero, Tentang, Layanan, Harga, Cara kerja, Kontak, footer |
-| `src/components/projects.tsx` | Section Proyek: proyek utama dan pengalaman tim developer |
-| `src/components/pricing-tabs.tsx` | Tab harga (client component); semua panel tetap ada di HTML |
-| `src/components/erp-dashboard.tsx` | Ilustrasi dashboard ERP (SVG) di hero |
-| `src/components/site-header.tsx` | Header dan menu mobile |
-| `src/components/two-lines.tsx` | Judul dua baris |
-| `src/app/page.tsx` | Urutan section dan JSON-LD Organization |
-| `src/app/layout.tsx`, `robots.ts`, `sitemap.ts` | Metadata, font, robots, sitemap |
-| `src/app/globals.css` | Mobile first: gaya dasar untuk HP (< 768 px), lalu `@media (min-width: 768px)` untuk tablet dan desktop, dan `768–1100px` untuk penyesuaian tablet. Di HP, proyek developer dan kartu harga tampil sebagai carousel geser |
-| `public/` | Logo, foto, dan screenshot proyek (sumber di `docs/aset-visual.md`) |
+| `src/content/site.ts` | Data bersama: perusahaan, sosial media, navigasi, paket harga, cara kerja |
+| `src/components/distributor-home.tsx` | Section homepage |
+| `src/components/ui/` | Pola bersama: `sections.module.css` (judul bernomor, kartu, centang), `section-head.tsx`, `icons.tsx`, `flow-illustration.tsx` |
+| `src/components/site-header.tsx`, `site-footer.tsx` | Header dan footer semua halaman |
+| `src/components/consultation-form.tsx` | Formulir menuju WhatsApp |
+| `src/components/hero-preview.module.css` | Frame browser dan kartu status di hero |
+| `src/app/globals.css` | Token Tailwind, dasar layout, hero, Tentang, konsultasi, privasi (mobile first) |
+| `src/app/harga/`, `src/app/demo/` | Halaman beserta CSS Module-nya |
+| `public/` | Logo, screenshot prototype, ilustrasi, foto (sumber di `docs/aset-visual.md`) |
 
-Untuk mengubah teks, cukup edit `site.ts`. Untuk menyembunyikan harga, hapus baris `package-price` di `pricing-tabs.tsx` atau kosongkan grup di `pricing.groups`.
-
-Seluruh teks, termasuk kedua tab harga, dirender sebagai HTML statis sehingga bisa dibaca tanpa JavaScript oleh mesin pencari dan Astra (AI WhatsApp). Sinkronisasi konten ke Astra belum ada di repo ini.
+`next.config.ts` mengecualikan `*.module.css` dari loader Tailwind agar CSS Module tetap diproses sebagai module.
 
 ## Materi internal
 
-`_internal/` berada di luar `public/` dan diabaikan Git:
-
-- `_internal/sumber/`: PDF Company Profile dan Pedoman Brand.
-- `_internal/review/verify.py`: QA Playwright (lebar 320–1440 px, navigasi, tab harga, keyboard, gambar, HTML tanpa JS, path privat). Jalankan `python _internal/review/verify.py` saat preview aktif di port 3200.
-
-`.env*`, PDF, dan dokumen Office juga diabaikan Git.
+`_internal/` berada di luar `public/` dan diabaikan Git: PDF sumber (`_internal/sumber/`) dan skrip QA Playwright (`_internal/review/`). `.env*`, PDF, dan dokumen Office juga diabaikan Git.
 
 ## Dokumen
 
@@ -58,6 +59,5 @@ Seluruh teks, termasuk kedua tab harga, dirender sebagai HTML statis sehingga bi
 ## Repo dan deployment
 
 - Repo: [brifion-marden-group/brifion-website](https://github.com/brifion-marden-group/brifion-website) (private).
-- Preview produksi: https://brifion-website.vercel.app (Vercel, scope `imam-bahri-alwis-projects`, paket Hobby).
-- Deploy ulang dari folder ini: `vercel deploy --prod`. Repo belum terhubung ke Vercel untuk deploy otomatis; paket Hobby tidak bisa memakai repo private milik organisasi.
-- Domain `brifion.com` belum diarahkan. Untuk website resmi komersial, pindahkan ke paket Vercel Pro sebelum memasang domain.
+- Project Vercel pribadi sebelumnya telah dihapus; `.vercel` lokal dapat masih menunjuk project lama. Belum ada deploy untuk versi ini.
+- Domain `brifion.com` belum diarahkan. Untuk website resmi komersial, gunakan paket Vercel Pro sebelum memasang domain.

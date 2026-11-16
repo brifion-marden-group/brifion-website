@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Lora, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { company } from "@/content/site";
 import "./globals.css";
 
@@ -7,13 +7,6 @@ const sans = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  weight: ["500"],
-  style: ["italic"],
 });
 
 const title = `${company.name} | ${company.statement}`;
@@ -41,7 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id" className={`${sans.variable} ${lora.variable}`}>
+    <html lang="id" className={sans.variable}>
       <body>{children}</body>
     </html>
   );

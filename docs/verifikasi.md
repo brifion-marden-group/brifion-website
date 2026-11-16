@@ -1,5 +1,32 @@
 # Verifikasi
 
+## Navbar dikembalikan dan konsultasi dipusatkan, 16 November 2026
+
+Navbar kembali ke tampilan sebelum peringkasan: Demo, Solusi, Untuk siapa, Cara kerja, dan tautan Konsultasi pada desktop; hamburger dan CTA dalam menu pada mobile. Section konsultasi kini memakai pengantar center di atas formulir dengan lebar maksimum 720px. Formulir tetap satu langkah, tiga kolom, dan langsung menuju draf WhatsApp. Catatan navbar versi sebelumnya di bawah merupakan riwayat.
+
+## Penyederhanaan formulir dan navbar, 16 November 2026
+
+Formulir saat ini satu langkah dengan tiga kolom: nama, perusahaan, kebutuhan singkat. Tombol langsung membuka draf `wa.me`, tanpa layar sukses/konfirmasi tambahan. Email, telepon, jabatan, bidang, skala, anggaran, dan waktu tidak ditanyakan di website. Detail dilanjutkan pada percakapan. Navbar desktop: Demo sistem, Solusi, Tentang Brifion, Konsultasi; tombol konsultasi tetap terlihat pada mobile. Script QA formulir dua langkah di bawah merupakan riwayat dan perlu diganti untuk alur baru. Tidak menambahkan AI WhatsApp atau mengirim pesan saat QA.
+
+`pnpm lint` dan `pnpm build`: PASS. `_internal/review/simple-funnel-qa.py`: PASS pada 320, 390, 768, 1024, 1440; navbar, menu dan Escape, tiga kolom, validasi native, navigasi langsung ke draf WA dengan hanya query `text`, encoding perusahaan `PT A & B`, tanpa POST ke server. Navigasi WA dicegat lokal; tidak mengirim pesan. Submit dinonaktifkan tanpa JS agar nilai state yang belum dihidrasi tidak terkirim. Audit kontras teks: tidak ada temuan.
+
+## Redesign, 15 November 2026 (hasil terkini)
+
+Preview: http://localhost:3200. Prototype: http://127.0.0.1:3214/login. Domain dan deployment ditunda.
+
+- Homepage fokus distributor/supplier; proyek lintas bidang dan harga lama tidak dirender. Demo memakai prototype supermarket dengan data simulasi.
+- Formulir hanya menyusun draf `wa.me`. Tanpa database, API pengajuan, localStorage, atau pengiriman otomatis. Reload menghapus isian.
+- `_internal/review/redesign-qa.py` lulus pada 320, 390, 768, 1024, 1440: tanpa overflow, gambar termuat, navigasi, form maju/mundur dan Ubah isian, encoding perusahaan dengan `&`, reload, tanpa POST atau error JavaScript.
+- HTML tanpa JS menyediakan profil/solusi/cara kerja dan alternatif email. Demo, privasi, sitemap, robots: HTTP 200.
+- Audit kontras teks DOM homepage tidak menemukan rasio di bawah AA.
+- `pnpm lint` dan `pnpm build`: PASS pada hasil akhir; sembilan route statis dihasilkan. QA lima lebar dan kontras juga PASS pada preview produksi hasil build ini.
+- Tautan aplikasi demo menuju `http://127.0.0.1:3214/login`; halaman akun uji berhasil dibuka. Skip link keyboard PASS. Path internal, environment, dan API pengajuan yang tidak digunakan mengembalikan 404.
+- Screenshot: `_internal/review/redesign-hero-{390,1440}.png` dan `redesign-full-{390,1440}.png`.
+
+Batas: belum perangkat fisik/Safari. QA tidak mengirim WhatsApp. Mock prototype hanya development; akses publik belum diatur. Foto stok bukan fasilitas/karyawan Brifion atau klien.
+
+Bagian berikut adalah riwayat versi lama dan tidak seluruhnya berlaku pada homepage baru.
+
 Diperbarui 13 November 2026. Preview produksi: http://localhost:3200.
 
 ## Pemeriksaan terakhir
