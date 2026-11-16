@@ -56,6 +56,7 @@ export default function PricingPage() {
               </li>
             ))}
           </ol>
+          <p className={styles.costNote}>Harga belum termasuk pajak, domain, dan hosting. Kebutuhan serta biaya tambahan disepakati sebelum pengerjaan.</p>
         </div>
       </section>
 

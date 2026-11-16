@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const steps = [
-  ["Masuk dengan akun uji", "Pilih peran yang ingin dicoba: Owner, Supervisor, Gudang, Kasir, atau Sales."],
+  ["Masuk dengan akun uji", "Tersedia delapan akun: Owner, Supervisor, Kepala Gudang, Petugas Gudang, Kasir, Sales, Sopir, dan Keuangan. Pilih akun yang ingin Anda coba."],
   ["Jelajahi tampilannya", "Owner melihat Dashboard dan Stok. Peran lain melihat menu sesuai tugasnya."],
   ["Ceritakan kebutuhan Anda", "Setelah mencoba, ceritakan proses yang berbeda di perusahaan Anda."],
 ];
