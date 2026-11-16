@@ -4,9 +4,14 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import s from "@/components/ui/sections.module.css";
+import { pageMetadata } from "@/lib/seo";
 import styles from "./demo.module.css";
 
-export const metadata: Metadata = { title: "Demo prototype supermarket | Brifion", description: "Panduan eksplorasi prototype supermarket Brifion dengan data simulasi.", alternates: { canonical: "/demo" } };
+export const metadata: Metadata = pageMetadata({
+  title: "Demo prototype supermarket",
+  description: "Coba prototype sistem supermarket dan distribusi buatan Brifion dengan data simulasi: dashboard, stok gudang dan rak, serta akses per peran pengguna.",
+  path: "/demo",
+});
 
 const steps = [
   ["Masuk dengan akun uji", "Pilih peran yang ingin dicoba: Owner, Supervisor, Gudang, Kasir, atau Sales."],

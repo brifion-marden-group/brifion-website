@@ -3,13 +3,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company, distributorPackages } from "@/content/site";
 import s from "@/components/ui/sections.module.css";
+import { pageMetadata } from "@/lib/seo";
 import styles from "./harga.module.css";
 
-export const metadata: Metadata = {
-  title: "Harga paket aplikasi distributor | Brifion",
-  description: "Paket aplikasi custom untuk distributor dan supplier: Stok Tertib, Order ke Stok, dan Distribusi Terkendali, lengkap dengan cakupan, durasi, garansi, dan termin pembayaran.",
-  alternates: { canonical: "/harga" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Harga paket aplikasi distributor",
+  description: "Harga paket aplikasi custom untuk distributor dan supplier: Stok Tertib mulai Rp8 juta, Order ke Stok mulai Rp12 juta, dan Distribusi Terkendali mulai Rp25 juta, lengkap dengan cakupan, durasi, dan garansi.",
+  path: "/harga",
+});
 
 const { items } = distributorPackages;
 

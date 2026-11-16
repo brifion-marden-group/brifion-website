@@ -6,8 +6,10 @@
 export const company = {
   legalName: "PT Brifion Marden Group",
   name: "Brifion Marden Group",
-  statement: "Aplikasi custom untuk distributor dan supplier.",
-  url: "https://brifion.com",
+  shortName: "Brifion",
+  statement: "Aplikasi custom untuk distributor dan supplier",
+  // Domain utama: Vercel me-redirect brifion.com ke www.brifion.com, jadi canonical memakai www.
+  url: "https://www.brifion.com",
   email: "business@brifion.com",
   whatsappUrl: "https://wa.me/6285695102171",
   whatsappDisplay: "+62 856-9510-2171",

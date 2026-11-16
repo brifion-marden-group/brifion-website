@@ -9,23 +9,13 @@ const sans = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = `${company.name} | ${company.statement}`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(company.url),
-  title,
+  title: { template: `%s | ${company.shortName}`, default: `${company.name} | ${company.statement}` },
   description: company.description,
   applicationName: company.name,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "id_ID",
-    url: "/",
-    siteName: company.name,
-    title,
-    description: company.description,
-  },
-  twitter: { card: "summary", title, description: company.description },
+  // Isi GOOGLE_SITE_VERIFICATION di environment Vercel jika verifikasi Search Console memakai tag HTML.
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
 };
 
 export const viewport: Viewport = {
