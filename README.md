@@ -58,6 +58,7 @@ Formulir konsultasi tidak menyimpan data: isian disusun menjadi draf pesan `wa.m
 
 ## Repo dan deployment
 
-- Repo: [brifion-marden-group/brifion-website](https://github.com/brifion-marden-group/brifion-website) (private).
-- Project Vercel pribadi sebelumnya telah dihapus; `.vercel` lokal dapat masih menunjuk project lama. Belum ada deploy untuk versi ini.
-- Domain `brifion.com` belum diarahkan. Untuk website resmi komersial, gunakan paket Vercel Pro sebelum memasang domain.
+- Repo: [brifion-marden-group/brifion-website](https://github.com/brifion-marden-group/brifion-website).
+- Vercel (akun `brifionmardengr`, project `brifion-website`) terhubung ke repo ini: setiap push ke `main` memicu deploy produksi. Paket Hobby menolak deploy dari repo private milik organisasi GitHub, jadi repo perlu public atau akun Vercel perlu paket Pro.
+- Domain: `brifion.com` di-redirect ke `www.brifion.com` (domain utama). DNS dikelola di Hostinger.
+- Ketentuan Vercel membatasi paket Hobby untuk penggunaan non-komersial; untuk website resmi perusahaan, pertimbangkan paket Pro.
