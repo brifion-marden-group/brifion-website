@@ -1,0 +1,61 @@
+name: Redeploy Website
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: redeploy-website-production
+  cancel-in-progress: false
+
+jobs:
+  redeploy:
+    name: Trigger Vercel main
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Validate branch and request deployment
+        env:
+          DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        shell: python
+        run: |
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          if os.environ.get("GITHUB_REF") != "refs/heads/main":
+              sys.exit("::error::Jalankan workflow dari branch main.")
+
+          hook = os.environ.get("DEPLOY_HOOK", "").strip()
+          if not hook:
+              sys.exit("::error::Secret VERCEL_DEPLOY_HOOK belum diatur. Buat Deploy Hook untuk branch main di project Vercel Brifion.")
+
+          url = urllib.parse.urlsplit(hook)
+          if (url.scheme != "https" or url.netloc != "api.vercel.com"
+              or not url.path.startswith("/v1/integrations/deploy/")
+              or url.username or url.password or url.fragment):
+              sys.exit("::error::Secret harus berisi URL Deploy Hook resmi Vercel.")
+
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, *args, **kwargs):
+                  return None
+
+          request = urllib.request.Request(hook, data=b"", method="POST")
+          try:
+              with urllib.request.build_opener(NoRedirect).open(request, timeout=60) as response:
+                  result = json.load(response)
+          except urllib.error.HTTPError as error:
+              sys.exit(f"::error::Vercel menolak pemicu deployment (HTTP {error.code}). Periksa Deploy Hook dan integrasi Git project.")
+          except (urllib.error.URLError, TimeoutError, ValueError):
+              sys.exit("::error::Respons Deploy Hook gagal diterima. Periksa Vercel sebelum mencoba lagi agar tidak membuat deployment ganda.")
+
+          if not isinstance(result, dict) or not isinstance(result.get("job"), dict) or not result["job"].get("id"):
+              sys.exit("::error::Vercel tidak mengembalikan ID job deployment yang diharapkan.")
+
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+              summary.write("## Permintaan deployment diterima\n\nVercel menerima pemicu Deploy Hook. Periksa deployment baru di project **brifion-website**, pastikan sumbernya commit terbaru **main** dan statusnya **Ready**.\n\nWorkflow hijau berarti pemicu diterima, bukan build produksi sudah selesai.\n")
+          print("Permintaan deployment diterima Vercel. Pantau hasil build di dashboard Vercel.")

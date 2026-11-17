@@ -58,6 +58,8 @@ Formulir konsultasi tidak menyimpan data: isian disusun menjadi draf pesan `wa.m
 
 ## Repo dan deployment
 
+- Redeploy manual dari GitHub: [panduan Deploy Hook dan secret](docs/redeploy.md). Workflow `Redeploy Website` memakai `workflow_dispatch` dari `main`; secret `VERCEL_DEPLOY_HOOK` harus menunjuk hook branch `main` milik project Brifion. Status hijau berarti pemicu diterima, bukan deployment sudah Ready.
+
 - Repo: [brifion-marden-group/brifion-website](https://github.com/brifion-marden-group/brifion-website).
 - Vercel (akun `brifionmardengr`, project `brifion-website`) terhubung ke repo ini: setiap push ke `main` memicu deploy produksi. Paket Hobby menolak deploy dari repo private milik organisasi GitHub, jadi repo perlu public atau akun Vercel perlu paket Pro.
 - Domain: `brifion.com` di-redirect ke `www.brifion.com` (domain utama). DNS dikelola di Hostinger.
