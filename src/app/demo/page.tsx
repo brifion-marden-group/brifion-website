@@ -44,7 +44,7 @@ export default function DemoPage() {
               {demoUrl
                 ? <a className={s.btnSolid} href={demoUrl.toString()} target="_blank" rel="noopener noreferrer">Buka aplikasi demo <span aria-hidden="true">↗</span></a>
                 : <p className={styles.notice}>Akses aplikasi demo sedang disiapkan.</p>}
-              <Link className={s.btnOutline} href="/?demo=supermarket-distribusi#konsultasi">Konsultasikan kebutuhan</Link>
+              <Link className={s.btnOutline} href="/?demo=supermarket-distribusi#form-konsultasi">Konsultasikan kebutuhan</Link>
             </div>
           </div>
 

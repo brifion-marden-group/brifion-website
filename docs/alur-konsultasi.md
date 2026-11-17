@@ -7,10 +7,10 @@ Diperbarui 17 November 2026. Perubahan hanya pada website; tidak mengubah Astra 
 | CTA | Tujuan | Konteks draf |
 | --- | --- | --- |
 | Konsultasi umum ke formulir | /#konsultasi | Tidak ada label paket/demo |
-| Kartu Stok Tertib di beranda | /?paket=stok-tertib#konsultasi | Paket Stok Tertib |
-| Kartu Order ke Stok di beranda | /?paket=order-ke-stok#konsultasi | Paket Order ke Stok |
-| Kartu Distribusi Terkendali di beranda | /?paket=distribusi-terkendali#konsultasi | Paket Distribusi Terkendali |
-| Konsultasikan kebutuhan pada /demo | /?demo=supermarket-distribusi#konsultasi | Demo supermarket dan distribusi |
+| Kartu Stok Tertib di beranda | /?paket=stok-tertib#form-konsultasi | Paket Stok Tertib |
+| Kartu Order ke Stok di beranda | /?paket=order-ke-stok#form-konsultasi | Paket Order ke Stok |
+| Kartu Distribusi Terkendali di beranda | /?paket=distribusi-terkendali#form-konsultasi | Paket Distribusi Terkendali |
+| Konsultasikan kebutuhan pada /demo | /?demo=supermarket-distribusi#form-konsultasi | Demo supermarket dan distribusi |
 | Tiga tombol paket pada /harga | WhatsApp langsung | Nama paket masing-masing |
 | CTA WhatsApp umum | WhatsApp langsung | Pesan umum, tanpa konteks formulir |
 
@@ -56,3 +56,5 @@ Nama pada draf /harga berganti menjadi Order ke Stok atau Distribusi Terkendali 
 Lint dan production build lulus. Browser QA pada lebar 390 dan 1440 menguji jalur umum, ketiga paket beranda, demo, perpindahan konteks paket/demo ke umum, ketiga CTA /harga, konteks tidak dikenal, dan konteks bertentangan. Setiap draf formulir diuji memakai nama/perusahaan/kebutuhan dengan karakter &, +, # serta kebutuhan dua baris. Nomor tujuan, metode GET dan tiga isian diperiksa. Tidak ada pesan WhatsApp yang dikirim; permintaan ke wa.me diintersep lokal.
 
 Skrip dan hasil QA lokal tersedia di _internal/review/consultation-qa.py dan consultation-qa-results.json (diabaikan Git).
+
+CTA paket/demo langsung menuju awal formulir (#form-konsultasi). Kolom kebutuhan diisi dengan gambaran awal yang bisa diedit; nama dan perusahaan tetap kosong. Judul menunjukkan konteks dan petunjuk meminta pengunjung menyesuaikan teks. Edit kebutuhan dipisahkan per konteks, sehingga perpindahan paket tidak menimpa edit paket lain dan jalur umum tidak membawa teks paket.

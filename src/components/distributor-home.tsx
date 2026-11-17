@@ -97,7 +97,7 @@ export function PackagesSection() {
             </div>
             <div className={s.cardFoot}>
               <Link className={s.arrowLink} href={`/harga#${plan.id}`}>Lihat detail paket <span aria-hidden="true">&rarr;</span></Link>
-              <Link className={s.btnOutline} href={`/?paket=${plan.id}#konsultasi`}>Konsultasikan paket ini</Link>
+              <Link className={s.btnOutline} href={`/?paket=${plan.id}#form-konsultasi`}>Konsultasikan paket ini</Link>
             </div>
           </li>
         ))}
