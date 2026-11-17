@@ -90,6 +90,8 @@
 .about-refined-copy h2 span { color: #d6bb8e; }
 .about-refined-copy > p:not(.eyebrow) { margin-top: 22px; font-size: 15px; line-height: 1.8; color: #ccd3dc; max-width: 570px; }
 .about-refined-copy .text-link { margin-top: 20px; }
+.about-refined-links { display: flex; flex-wrap: wrap; gap: 0 28px; margin-top: 20px; }
+.about-refined-links .text-link { margin-top: 0; }
 .about-refined-visual { min-width: 0; }
 .about-refined-visual > div { position: relative; aspect-ratio: 4 / 3; border-radius: 5px; overflow: hidden; background: #eaf2f6; }
 .about-refined-visual img { object-fit: cover; object-position: center 66%; }

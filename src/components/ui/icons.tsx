@@ -9,6 +9,12 @@ const paths: Record<string, React.ReactNode> = {
   kas: <><rect x="2" y="6" width="20" height="13" rx="2" /><path d="M16 12.5h2M2 10h20" /></>,
   laporan: <><path d="M4 20V4M4 20h16" /><path d="M8 16l4-5 3 3 5-6" /></>,
   akses: <><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5" /><path d="M17 4.5a3.5 3.5 0 010 7M19 14.5c1.4.8 2.2 2.5 2.5 5" /></>,
+  users: <><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5" /><circle cx="17.5" cy="9" r="2.5" /><path d="M17 14.6c2.2.3 3.8 2 4.5 5" /></>,
+  payment: <><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20M6 15h4" /></>,
+  api: <><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></>,
+  speed: <><path d="M4 18a8 8 0 1116 0" /><path d="M12 18l4-6" /><circle cx="12" cy="18" r="1.3" /></>,
+  web: <><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 9h20M6 6.5h.01M9 6.5h.01" /><path d="M6 13h7M6 16h5" /></>,
+  team: <><circle cx="12" cy="7" r="3" /><circle cx="5" cy="10" r="2.2" /><circle cx="19" cy="10" r="2.2" /><path d="M7 20c.6-3.2 2.6-5 5-5s4.4 1.8 5 5M1.5 19c.4-2.2 1.7-3.6 3.5-3.6M22.5 19c-.4-2.2-1.7-3.6-3.5-3.6" /></>,
   dashboard: <><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></>,
 };
 

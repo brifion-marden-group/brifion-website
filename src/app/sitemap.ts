@@ -2,6 +2,11 @@ import type { MetadataRoute } from "next";
 import { company } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-11-16");
-  return ["", "/harga", "/demo", "/privasi"].map((route) => ({ url: `${company.url}${route}`, lastModified }));
+  return [
+    { path: "", modified: "2026-11-17" },
+    { path: "/harga", modified: "2026-11-16" },
+    { path: "/demo", modified: "2026-11-16" },
+    { path: "/tentang", modified: "2026-11-17" },
+    { path: "/privasi", modified: "2026-11-16" },
+  ].map(({ path, modified }) => ({ url: new URL(path || "/", company.url).href, lastModified: new Date(modified) }));
 }

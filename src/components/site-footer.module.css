@@ -4,6 +4,7 @@
 .grid > div:first-child { grid-column: 1 / -1; }
 .grid p { color: #56606c; margin: 12px 0 0; max-width: 32ch; }
 .logo { width: 150px; height: auto; }
+.grid p.legal { margin-top: 10px; font-size: .8rem; line-height: 1.6; }
 .grid nav { display: grid; gap: 8px; align-content: start; }
 .grid h2 { margin: 0 0 4px; font-size: .8rem; font-weight: 600; letter-spacing: 0; color: #56606c; }
 .grid a { color: #0f1a2b; text-decoration: none; }

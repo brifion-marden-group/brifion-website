@@ -1,6 +1,6 @@
 # Aset visual
 
-## Aset aktif (16 November 2026)
+## Aset aktif (17 November 2026)
 
 | Berkas | Dipakai di | Sumber |
 | --- | --- | --- |
@@ -10,6 +10,11 @@
 | `images/contexts/*.webp` (5 berkas) | Kartu Jenis usaha | Ilustrasi dari ESIACC (esiacc.com), dipakai atas arahan pengguna; bukan karya Brifion dan lisensinya belum diverifikasi |
 | `src/components/ui/flow-illustration.tsx` | Kartu "Alur usaha Anda berbeda?" | SVG buatan sendiri |
 | `src/components/ui/icons.tsx` | Baris kemampuan paket | Ikon garis buatan sendiri |
+| `images/team/syamil.webp`, `alwi.webp`, `abdee.webp` | Kartu tim dan hero `/tentang` | Pas foto asli Muhammad Syamil Alfarizi, Imam Bahri Alwi, dan Abdee Alamsyah Noer Siyam (dikirim via WhatsApp, 17 Nov 2026), dipotong persegi 480 px, latar merah diganti krem `#f1e7d6` dengan rembg (model isnet-general-use, diproses lokal); dipublikasikan atas persetujuan |
+| `images/showcase/dashboard.webp`, `stok.webp`, `pesanan-warung.webp`, `pengiriman-hp.webp` | Section "Sistem yang kami bangun" `/tentang` | Screenshot prototype Brifion sendiri dari https://demo.brifion.com (17 Nov 2026), data simulasi |
+| `images/business-planning.webp` | Hero `/tentang` | Alena Darmel, [Pexels](https://www.pexels.com/photo/a-person-sticking-sticky-notes-on-a-paper-7706977/), lisensi Pexels; dipulihkan dari riwayat git |
+| `images/partners/dryfix.webp` | Kolaborasi `/tentang` | Logo resmi PT DryFix Solusi Indonesia dari https://dryfixwaterproofing.com/ ; dipakai atas persetujuan publikasi mitra (17 Nov 2026) |
+| `images/partners/chadpro.webp` | Kolaborasi `/tentang` | Logo resmi CHADPRO (PT Cahaya Haka) dari https://chadpro.co.id/ ; dipakai atas persetujuan publikasi mitra (17 Nov 2026) |
 
 Dihapus pada pembersihan 16 November 2026 karena tidak lagi dirender: `images/references/*` (cuplikan SimpliDOTS, Choco, Aras Pro), `projects/*`, `images/business-planning.webp`, `images/proyek-supermarket.webp`, `images/warehouse-operations.webp`, `demo/dashboard*.webp`, `demo/stock.webp`, dan `src/components/erp-dashboard.tsx`. Catatan di bawah adalah riwayat dan dapat menyebut berkas yang sudah dihapus.
 
