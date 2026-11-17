@@ -15,7 +15,7 @@ export function DistributorHero() {
         <p className="eyebrow">APLIKASI CUSTOM / DISTRIBUTOR & SUPPLIER</p>
         <h1 id="hero-title">Bisnis distribusi.<br /><span>Sistem sesuai<br />cara kerja Anda.</span></h1>
         <p className="hero-redesign-description">Kami membangun aplikasi untuk kebutuhan operasional Anda. Lihat contoh sistemnya, lalu ceritakan proses yang ingin dirapikan.</p>
-        <div className="distribution-actions"><Link className="button-gold" href="/demo">Lihat & coba demo</Link><a className="text-link light" href="#konsultasi">Konsultasikan kebutuhan</a></div>
+        <div className="distribution-actions"><Link className="button-gold" href="/demo">Lihat & coba demo</Link><Link className="text-link light" href="/#konsultasi">Konsultasikan kebutuhan</Link></div>
       </div>
       <div className={`hero-product-preview ${hero.visual}`}>
         <Link className={hero.browser} href="/demo" aria-label="Lihat dan coba prototype supermarket">
@@ -97,7 +97,7 @@ export function PackagesSection() {
             </div>
             <div className={s.cardFoot}>
               <Link className={s.arrowLink} href={`/harga#${plan.id}`}>Lihat detail paket <span aria-hidden="true">&rarr;</span></Link>
-              <a className={s.btnOutline} href="#konsultasi">Konsultasikan paket ini</a>
+              <Link className={s.btnOutline} href={`/?paket=${plan.id}#konsultasi`}>Konsultasikan paket ini</Link>
             </div>
           </li>
         ))}
@@ -111,7 +111,7 @@ export function PackagesSection() {
       </div>
       <div className={s.actions}>
         <Link className={s.btnOutline} href="/harga">Lihat perbandingan harga</Link>
-        <a className={s.btnSolid} href="#konsultasi">Konsultasikan kebutuhan</a>
+        <Link className={s.btnSolid} href="/#konsultasi">Konsultasikan kebutuhan</Link>
       </div>
     </div>
   </section>;
@@ -137,7 +137,7 @@ export function BusinessTypes() {
           <div className={s.cardBody}>
             <h3 className={s.cardTitle}>Alur usaha Anda berbeda?</h3>
             <p className={s.cardText}>Ceritakan prosesnya. Kami pelajari alur kerja tim Anda sebelum menentukan fitur.</p>
-            <a className={s.btnSolid} href="#konsultasi">Ceritakan kebutuhan Anda</a>
+            <Link className={s.btnSolid} href="/#konsultasi">Ceritakan kebutuhan Anda</Link>
           </div>
         </li>
       </ul>
@@ -154,7 +154,7 @@ export function CustomDevelopment() {
         <h2 id="about-title">Pahami bisnisnya.<br /><span>Baru bangun sistemnya.</span></h2>
         <p>PT Brifion Marden Group adalah mitra pengembangan sistem digital. Kami membantu distributor dan supplier membangun aplikasi sesuai kebutuhan operasionalnya.</p>
         <p>Kami mempelajari alur kerja tim Anda, menentukan prioritas, lalu membangun sistem secara bertahap. Mulai dari aplikasi web dan mobile hingga integrasi dan dashboard.</p>
-        <div className="about-refined-links"><Link className="text-link light" href="/tentang">Kenali tim kami <span aria-hidden="true">&rarr;</span></Link><a className="text-link light" href="#konsultasi">Ceritakan proses kerja Anda</a></div>
+        <div className="about-refined-links"><Link className="text-link light" href="/tentang">Kenali tim kami <span aria-hidden="true">&rarr;</span></Link><Link className="text-link light" href="/#konsultasi">Ceritakan proses kerja Anda</Link></div>
       </div>
       <figure className="about-refined-visual"><div><Image quality={90} src="/images/distribution-warehouse.webp" alt="Lorong gudang distribusi dengan rak tinggi berisi palet barang dan forklift yang sedang bekerja." fill sizes="(max-width: 767px) 100vw, 45vw" /></div></figure>
     </div>
@@ -195,7 +195,7 @@ export function Consultation() {
           <li><span>03</span><div><h3>Bahas bersama tim kami</h3><p>Kami pelajari alur kerja Anda sebelum membicarakan fitur dan biaya.</p></div></li>
         </ol>
         <dl className="consultation-contact">
-          <div><dt>WhatsApp</dt><dd><a href={company.whatsappUrl}>{company.whatsappDisplay}</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href={`${company.whatsappUrl}?text=${encodeURIComponent("Halo Brifion, saya ingin konsultasi kebutuhan aplikasi untuk usaha saya.")}`}>{company.whatsappDisplay}</a></dd></div>
           <div><dt>Email</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
         </dl>
       </div>
