@@ -1,0 +1,343 @@
+.hero {
+  background: #0f1a2b;
+  color: #f7f5f1;
+  padding-block: 48px 56px;
+}
+
+.heroInner {
+  max-width: 760px;
+}
+
+.heroEyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d6bb8e;
+}
+
+.heroTitle {
+  margin-top: 16px;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.heroTitle span {
+  color: #d6bb8e;
+}
+
+.heroIntro {
+  margin-top: 20px;
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ccd3dc;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #2b384d;
+  font-size: 13px;
+  color: #d6dce4;
+}
+
+.heroMeta strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Daftar proyek ---------- */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 32px;
+}
+
+.projectCard {
+  display: grid;
+  background: #fff;
+  border: 1px solid #e3e1db;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.previewWrap {
+  background: #eef1f5;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e3e1db;
+}
+
+.browser {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #d7dbe2;
+  background: #0f1a2b;
+  box-shadow: 0 18px 40px -24px rgba(15, 26, 43, 0.45);
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  background: #172336;
+  border-bottom: 1px solid #26354d;
+}
+
+.browserBar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #485974;
+}
+
+.browserBar span {
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #b7c3d4;
+  letter-spacing: 0.02em;
+}
+
+.browserMedia {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.browserMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.browser:hover .browserMedia img {
+  transform: scale(1.02);
+}
+
+.details {
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #f4efe6;
+  color: #74572d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.yearLoc {
+  font-size: 12px;
+  font-weight: 500;
+  color: #59616a;
+}
+
+.clientName {
+  margin-top: 16px;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #0f1a2b;
+}
+
+.sector {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8a6a3c;
+}
+
+.headline {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: #1f2937;
+}
+
+.summary {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.78;
+  color: #59616a;
+}
+
+.highlights {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 0;
+  padding: 18px 0;
+  border-top: 1px solid #ecebe6;
+  border-bottom: 1px solid #ecebe6;
+}
+
+.highlights div {
+  display: grid;
+  gap: 2px;
+}
+
+.highlights dt {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.highlights dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f1a2b;
+}
+
+.actions {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- CTA penutup ---------- */
+.ctaBand {
+  background: #0f1a2b;
+  color: #f7f5f1;
+  border-radius: 18px;
+  padding: 32px 24px;
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.ctaBand h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.ctaBand p {
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #ccd3dc;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ctaBtnGold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 8px;
+  background: #d6bb8e;
+  color: #0f1a2b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ctaBtnGold:hover {
+  background: #e7cc9f;
+}
+
+.ctaBtnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: 1px solid #3c4b63;
+  color: #f7f5f1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ctaBtnGhost:hover {
+  border-color: #d6bb8e;
+  color: #d6bb8e;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 68px 76px;
+  }
+
+  .previewWrap {
+    padding: 28px;
+  }
+
+  .details {
+    padding: 34px 36px;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .ctaBand {
+    padding: 44px 48px;
+    grid-template-columns: 1fr auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectCard {
+    grid-template-columns: 1.08fr 1fr;
+  }
+
+  .previewWrap {
+    border-bottom: none;
+    border-right: 1px solid #e3e1db;
+    padding: 34px;
+  }
+
+  .details {
+    padding: 38px 40px;
+  }
+}

@@ -3,7 +3,9 @@ import { company } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { path: "", modified: "2026-11-17" },
+    { path: "", modified: "2026-11-26" },
+    { path: "/portofolio", modified: "2026-11-26" },
+    { path: "/p/sentra-baja-nusantara", modified: "2026-11-26" },
     { path: "/harga", modified: "2026-11-16" },
     { path: "/demo", modified: "2026-11-16" },
     { path: "/tentang", modified: "2026-11-17" },

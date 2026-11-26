@@ -46,6 +46,7 @@ export const nav = [
   { href: "/#paket", label: "Paket" },
   { href: "/#untuk-siapa", label: "Untuk siapa" },
   { href: "/#cara-kerja", label: "Cara kerja" },
+  { href: "/portofolio", label: "Portofolio" },
   { href: "/harga", label: "Harga" },
   { href: "/tentang", label: "Tentang" },
 ] as const;
