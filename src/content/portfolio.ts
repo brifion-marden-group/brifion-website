@@ -41,4 +41,28 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     previewAlt:
       "Tampilan website korporat PT Sentra Baja Nusantara untuk pengadaan material baja industri.",
   },
+  {
+    slug: "vektor-logistik-armada",
+    clientName: "PT Vektor Logistik Armada",
+    sector: "Logistik Kargo, Cold-Chain & Manajemen Armada B2B",
+    category: "Website Korporat & Perencana Koridor",
+    year: "2026",
+    location: "Cikarang Barat, Bekasi",
+    domainDisplay: "vektorlogistik.co.id",
+    headline:
+      "Perencana koridor distribusi dan formulir kontrak armada terdedikasi untuk tim supply chain perusahaan.",
+    summary:
+      "Website korporat B2B yang mempermudah tim logistik memeriksa estimasi lead time per koridor, memilih spesifikasi armada dry hingga cold-chain, dan mengajukan proposal kontrak distribusi.",
+    highlights: [
+      { label: "Segmen klien", value: "FMCG, Farmasi & Manufaktur" },
+      { label: "Fitur utama", value: "Estimasi koridor & spesifikasi armada" },
+      { label: "Akses perangkat", value: "Responsif desktop & mobile" },
+    ],
+    liveHref: "/p/vektor-logistik-armada",
+    previewImage: "/images/portfolio/vektor/preview-live.png",
+    previewWidth: 1008,
+    previewHeight: 630,
+    previewAlt:
+      "Tampilan website korporat PT Vektor Logistik Armada untuk layanan logistik kargo dan manajemen armada B2B.",
+  },
 ] as const;
