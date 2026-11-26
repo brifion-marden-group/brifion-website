@@ -154,7 +154,7 @@ export function CustomDevelopment() {
         <h2 id="about-title">Pahami bisnisnya.<br /><span>Baru bangun sistemnya.</span></h2>
         <p>PT Brifion Marden Group adalah mitra pengembangan sistem digital. Kami membantu distributor dan supplier membangun aplikasi sesuai kebutuhan operasionalnya.</p>
         <p>Kami mempelajari alur kerja tim Anda, menentukan prioritas, lalu membangun sistem secara bertahap. Mulai dari aplikasi web dan mobile hingga integrasi dan dashboard.</p>
-        <div className="about-refined-links"><Link className="text-link light" href="/tentang">Kenali tim kami <span aria-hidden="true">&rarr;</span></Link><Link className="text-link light" href="/#konsultasi">Ceritakan proses kerja Anda</Link></div>
+        <div className="about-refined-links"><Link className="text-link light" href="/portofolio">Lihat portofolio <span aria-hidden="true">&rarr;</span></Link><Link className="text-link light" href="/tentang">Kenali tim kami <span aria-hidden="true">&rarr;</span></Link><Link className="text-link light" href="/#konsultasi">Ceritakan proses kerja Anda</Link></div>
       </div>
       <figure className="about-refined-visual"><div><Image quality={90} src="/images/distribution-warehouse.webp" alt="Lorong gudang distribusi dengan rak tinggi berisi palet barang dan forklift yang sedang bekerja." fill sizes="(max-width: 767px) 100vw, 45vw" /></div></figure>
     </div>
